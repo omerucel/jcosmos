@@ -10,6 +10,7 @@ public class ForbiddenErrorTest {
     {
         ForbiddenError error = new ForbiddenError();
         assertTrue(error instanceof Error);
+        assertEquals("Forbidden", error.getMessage());
         assertEquals(403, error.getErrorCode());
     }
 }

@@ -10,6 +10,7 @@ public class InternalServerErrorTest {
     {
         InternalServerError error = new InternalServerError();
         assertTrue(error instanceof Error);
+        assertEquals("Internal Server Error", error.getMessage());
         assertEquals(500, error.getErrorCode());
     }
 }

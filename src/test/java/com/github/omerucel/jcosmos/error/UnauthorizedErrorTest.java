@@ -10,6 +10,7 @@ public class UnauthorizedErrorTest {
     {
         UnauthorizedError error = new UnauthorizedError();
         assertTrue(error instanceof Error);
+        assertEquals("Unauthorized", error.getMessage());
         assertEquals(401, error.getErrorCode());
     }
 }

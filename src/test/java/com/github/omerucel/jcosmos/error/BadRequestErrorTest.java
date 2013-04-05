@@ -9,6 +9,7 @@ public class BadRequestErrorTest {
     {
         BadRequestError error = new BadRequestError();
         assertTrue(error instanceof ErrorAbstract);
+        assertEquals("Bad Request", error.getMessage());
         assertEquals(400, error.getErrorCode());
     }
 }

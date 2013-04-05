@@ -14,5 +14,8 @@ public class ValidationErrorTest {
         assertEquals("field", error.getFieldName());
         assertEquals("error-type", error.getErrorType());
         assertEquals("message", error.getMessage());
+
+        error = new ValidationError("field", "error-type");
+        assertEquals("Validation Error", error.getMessage());
     }
 }

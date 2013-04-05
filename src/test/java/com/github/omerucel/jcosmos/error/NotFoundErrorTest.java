@@ -9,6 +9,7 @@ public class NotFoundErrorTest {
     {
         NotFoundError error = new NotFoundError();
         assertTrue(error instanceof Error);
+        assertEquals("Not Found", error.getMessage());
         assertEquals(404, error.getErrorCode());
     }
 }

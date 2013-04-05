@@ -16,6 +16,7 @@ public class ErrorAbstractTest {
                 return 0;
             }
         });
+        assertEquals("Error", error.getMessage());
         assertTrue(error instanceof Error);
     }
 }
