@@ -1,6 +1,7 @@
 package com.github.omerucel.jcosmos.error;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 public class ValidationErrorTest {
@@ -9,12 +10,6 @@ public class ValidationErrorTest {
     {
         ValidationError error = new ValidationError("field", "error-type", "message");
         assertTrue(error instanceof Error);
-    }
-
-    @Test
-    public void getters()
-    {
-        ValidationError error = new ValidationError("field", "error-type", "message");
         assertEquals(400, error.getErrorCode());
         assertEquals("field", error.getFieldName());
         assertEquals("error-type", error.getErrorType());

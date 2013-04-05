@@ -1,16 +1,15 @@
 package com.github.omerucel.jcosmos.error;
 
-public class ValidationError extends Error{
-    private final static int errorCode = 400;
-
+public class ValidationError extends BadRequestError{
     String fieldName;
     String errorType;
+    String message;
 
-    ValidationError(String fieldName, String errortype, String message) {
-        super(message);
-
+    public ValidationError(String fieldName, String errorType, String message)
+    {
         this.fieldName = fieldName;
-        this.errorType = errortype;
+        this.errorType = errorType;
+        this.message = message;
     }
 
     public String getFieldName() {
@@ -21,7 +20,8 @@ public class ValidationError extends Error{
         return errorType;
     }
 
-    public int getErrorCode() {
-        return errorCode;
+    @Override
+    public String getMessage() {
+        return message;
     }
 }
