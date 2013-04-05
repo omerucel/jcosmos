@@ -24,8 +24,26 @@ public class Response {
         this.httpErrorCode = httpErrorCode;
     }
 
+    public Boolean hasError() {
+        return !(errors == null && getErrors().size() == 0);
+    }
+
+    public Boolean hasError(Class err) {
+        if (errors == null) return false;
+
+        for(ErrorAbstract error : getErrors())
+            if (err.isInstance(error))
+                return true;
+
+        return false;
+    }
+
     public void addError(ErrorAbstract error) {
         getErrors().add(error);
+    }
+
+    public void addErrors(ArrayList<ErrorAbstract> errors) {
+        getErrors().addAll(errors);
     }
 
     public ArrayList<ErrorAbstract> getErrors()
