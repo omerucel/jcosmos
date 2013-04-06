@@ -2,8 +2,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>jcosmos</groupId>
-    <artifactId>com.github.omerucel.jcosmos</artifactId>
+    <groupId>com.github.omerucel</groupId>
+    <artifactId>jcosmos</artifactId>
     <version>0.1</version>
     <packaging>jar</packaging>
 
@@ -20,8 +20,18 @@
     </licenses>
 
     <scm>
-        <url>scm:git:https://github.com/omerucel/jcosmos.git</url>
+        <connection>scm:git:git@github.com:omerucel/jcosmos.git</connection>
+        <developerConnection>scm:git:git@github.com:omerucel/jcosmos.git</developerConnection>
+        <url>git@github.com:omerucel/jcosmos.git</url>
     </scm>
+
+    <developers>
+        <developer>
+            <id>omerucel</id>
+            <name>Omer UCEL</name>
+            <email>omerucel@gmail.com</email>
+        </developer>
+    </developers>
 
     <build>
         <pluginManagement>
