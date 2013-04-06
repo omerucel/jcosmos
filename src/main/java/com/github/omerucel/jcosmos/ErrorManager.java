@@ -1,7 +1,10 @@
 package com.github.omerucel.jcosmos;
 
 import com.github.omerucel.jcosmos.error.ErrorAbstract;
+import com.github.omerucel.jcosmos.error.ValidationError;
 import java.util.ArrayList;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 public class ErrorManager {
     private ArrayList<ErrorAbstract> errors;
@@ -34,5 +37,34 @@ public class ErrorManager {
              errors = new ArrayList<ErrorAbstract>();
 
         return errors;
+    }
+
+    public String toJsonString(Class aClass)
+    {
+        JSONArray list = new JSONArray();
+
+        for(ErrorAbstract error : getErrors())
+        {
+            if (!aClass.isInstance(error)) continue;
+
+            JSONObject temp = new JSONObject();
+            temp.put("message", error.getMessage());
+            temp.put("error_code", error.getErrorCode());
+
+            if (error instanceof ValidationError)
+            {
+                temp.put("field", ((ValidationError)error).getFieldName());
+                temp.put("validation_type", ((ValidationError)error).getErrorType());
+            }
+
+            list.add(temp);
+        }
+
+        return list.toJSONString();
+    }
+
+    public String toJsonString()
+    {
+        return toJsonString(ErrorAbstract.class);
     }
 }
