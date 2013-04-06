@@ -7,6 +7,22 @@
   <version>0.1</version>
   <packaging>jar</packaging>
 
+    <build>
+        <pluginManagement>
+            <plugins>
+              <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                  <source>1.5</source>
+                  <target>1.5</target>
+                </configuration>
+              </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
   <name>com.github.omerucel.jcosmos</name>
   <url>http://maven.apache.org</url>
     <dependencies>
